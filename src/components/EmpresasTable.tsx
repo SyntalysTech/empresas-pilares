@@ -22,14 +22,18 @@ function TickerBadge({ ticker }: { ticker: string }) {
 }
 
 function ProgressBar52Semanas({ porcentaje }: { porcentaje: number }) {
+  // Color según el porcentaje: rojo (bajo), amarillo (medio), verde (alto)
+  const getBarColor = (pct: number) => {
+    if (pct >= 66) return 'bg-gradient-to-r from-green-400 to-green-500';
+    if (pct >= 33) return 'bg-gradient-to-r from-yellow-400 to-yellow-500';
+    return 'bg-gradient-to-r from-red-400 to-red-500';
+  };
+
   return (
     <div className="w-full">
-      <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
-        <span>{porcentaje.toFixed(2)}%</span>
-      </div>
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
         <div
-          className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full transition-all"
+          className={`${getBarColor(porcentaje)} h-2.5 rounded-full transition-all`}
           style={{ width: `${Math.min(100, Math.max(0, porcentaje))}%` }}
         />
       </div>

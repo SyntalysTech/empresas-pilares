@@ -48,3 +48,411 @@ body {
 .dark .hover\:bg-gray-750:hover {
   background-color: #1a2332;
 }
+
+/* ========== TEMA: MEDIANOCHE (Cielo nocturno con estrellas) ========== */
+.theme-midnight {
+  --midnight-bg: #0a0a1a;
+  --midnight-card: rgba(20, 20, 50, 0.85);
+  --midnight-accent: #8b5cf6;
+  --midnight-glow: #c4b5fd;
+  --midnight-star: #fef3c7;
+}
+
+.theme-midnight body,
+.theme-midnight .bg-gradient-to-br {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 10% 90%, rgba(167, 139, 250, 0.08) 0%, transparent 30%),
+    linear-gradient(180deg, #0a0a1a 0%, #0f0f2a 50%, #0a0a1a 100%) !important;
+  position: relative;
+}
+
+/* Efecto de estrellas con pseudo-elementos */
+.theme-midnight body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fef3c7, transparent),
+    radial-gradient(2px 2px at 40px 70px, #e9d5ff, transparent),
+    radial-gradient(1px 1px at 90px 40px, #fef3c7, transparent),
+    radial-gradient(2px 2px at 130px 80px, #c4b5fd, transparent),
+    radial-gradient(1px 1px at 160px 120px, #fef3c7, transparent),
+    radial-gradient(2px 2px at 200px 50px, #e9d5ff, transparent),
+    radial-gradient(1px 1px at 250px 160px, #fef3c7, transparent),
+    radial-gradient(2px 2px at 300px 90px, #c4b5fd, transparent),
+    radial-gradient(1px 1px at 350px 200px, #fef3c7, transparent),
+    radial-gradient(2px 2px at 400px 130px, #e9d5ff, transparent),
+    radial-gradient(1px 1px at 450px 60px, #fef3c7, transparent),
+    radial-gradient(2px 2px at 500px 180px, #c4b5fd, transparent);
+  background-repeat: repeat;
+  background-size: 550px 250px;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.4; }
+}
+
+.theme-midnight .bg-gray-800 {
+  background: linear-gradient(135deg, rgba(30, 27, 75, 0.9) 0%, rgba(20, 20, 50, 0.85) 100%) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.theme-midnight .bg-gray-700 {
+  background: linear-gradient(135deg, rgba(49, 46, 129, 0.6) 0%, rgba(30, 27, 75, 0.7) 100%) !important;
+}
+
+.theme-midnight .border-gray-700,
+.theme-midnight .border-gray-100 {
+  border-color: rgba(139, 92, 246, 0.3) !important;
+}
+
+.theme-midnight .text-purple-400,
+.theme-midnight .text-purple-600 {
+  color: #a78bfa !important;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+.theme-midnight .bg-purple-50,
+.theme-midnight .dark\:bg-purple-900\/20 {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(99, 102, 241, 0.15) 100%) !important;
+}
+
+.theme-midnight .text-green-500 {
+  color: #a3e635 !important;
+  text-shadow: 0 0 10px rgba(163, 230, 53, 0.4);
+}
+
+.theme-midnight .bg-green-100,
+.theme-midnight .bg-green-900 {
+  background: rgba(163, 230, 53, 0.15) !important;
+}
+
+.theme-midnight .text-green-700,
+.theme-midnight .text-green-300 {
+  color: #bef264 !important;
+}
+
+.theme-midnight .hover\:bg-gray-100:hover,
+.theme-midnight .dark\:hover\:bg-gray-700:hover {
+  background: rgba(139, 92, 246, 0.2) !important;
+}
+
+.theme-midnight .text-gray-400 {
+  color: #a5b4fc !important;
+}
+
+.theme-midnight .text-gray-300 {
+  color: #c7d2fe !important;
+}
+
+.theme-midnight .text-white {
+  color: #f5f3ff !important;
+}
+
+/* ========== TEMA: OCÉANO (Profundidades marinas con ondas) ========== */
+.theme-forest {
+  --ocean-deep: #0c1426;
+  --ocean-mid: #0e2a47;
+  --ocean-light: #1e4976;
+  --ocean-accent: #38bdf8;
+  --ocean-glow: #7dd3fc;
+}
+
+.theme-forest body,
+.theme-forest .bg-gradient-to-br {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 100%, rgba(2, 132, 199, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #0c1426 0%, #0e2a47 40%, #0c1426 100%) !important;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efecto de luz submarina */
+.theme-forest body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 70% 60%, rgba(14, 165, 233, 0.06) 0%, transparent 35%),
+    radial-gradient(ellipse at 20% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: 0;
+  animation: shimmer 10s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.theme-forest body::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  height: 300px;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: wave 8s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0) translateY(0); opacity: 0.3; }
+  50% { transform: translateX(2%) translateY(-10px); opacity: 0.5; }
+}
+
+.theme-forest .bg-gray-800 {
+  background: linear-gradient(135deg, rgba(14, 42, 71, 0.9) 0%, rgba(12, 20, 38, 0.85) 100%) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.15) !important;
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.15), inset 0 1px 0 rgba(125, 211, 252, 0.1);
+}
+
+.theme-forest .bg-gray-700 {
+  background: linear-gradient(135deg, rgba(30, 73, 118, 0.6) 0%, rgba(14, 42, 71, 0.7) 100%) !important;
+}
+
+.theme-forest .border-gray-700,
+.theme-forest .border-gray-100 {
+  border-color: rgba(56, 189, 248, 0.25) !important;
+}
+
+.theme-forest .text-purple-400,
+.theme-forest .text-purple-600 {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.theme-forest .bg-purple-50,
+.theme-forest .dark\:bg-purple-900\/20 {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(14, 165, 233, 0.1) 100%) !important;
+}
+
+.theme-forest .text-green-500 {
+  color: #22d3ee !important;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
+.theme-forest .bg-green-100,
+.theme-forest .bg-green-900 {
+  background: rgba(34, 211, 238, 0.15) !important;
+}
+
+.theme-forest .text-green-700,
+.theme-forest .text-green-300 {
+  color: #67e8f9 !important;
+}
+
+.theme-forest .text-gray-400 {
+  color: #7dd3fc !important;
+}
+
+.theme-forest .text-gray-300 {
+  color: #bae6fd !important;
+}
+
+.theme-forest .text-white {
+  color: #f0f9ff !important;
+}
+
+.theme-forest .hover\:bg-gray-100:hover,
+.theme-forest .dark\:hover\:bg-gray-700:hover {
+  background: rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Burbujas decorativas */
+.theme-forest .bg-gray-800::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: bubble 6s ease-in-out infinite;
+}
+
+@keyframes bubble {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-10px) scale(1.1); opacity: 0.6; }
+}
+
+/* ========== TEMA: ATARDECER (Cielo ardiente con degradado dramático) ========== */
+.theme-sunset {
+  --sunset-dark: #1a0a0a;
+  --sunset-wine: #4a1c2e;
+  --sunset-orange: #f97316;
+  --sunset-gold: #fbbf24;
+  --sunset-pink: #ec4899;
+}
+
+.theme-sunset body,
+.theme-sunset .bg-gradient-to-br {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(249, 115, 22, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 40%),
+    linear-gradient(180deg,
+      #1a0a0a 0%,
+      #2d1320 20%,
+      #4a1c2e 40%,
+      #5c2636 60%,
+      #3d1524 80%,
+      #1a0a0a 100%
+    ) !important;
+  position: relative;
+}
+
+/* Efecto de sol poniente */
+.theme-sunset body::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background:
+    radial-gradient(circle,
+      rgba(251, 191, 36, 0.4) 0%,
+      rgba(249, 115, 22, 0.3) 30%,
+      rgba(236, 72, 153, 0.2) 50%,
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 0;
+  animation: sunPulse 5s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+  50% { transform: translateX(-50%) scale(1.05); opacity: 1; }
+}
+
+/* Nubes sutiles */
+.theme-sunset body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 70%, rgba(255, 255, 255, 0.04) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+  animation: clouds 20s ease-in-out infinite;
+}
+
+@keyframes clouds {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20px); }
+}
+
+.theme-sunset .bg-gray-800 {
+  background: linear-gradient(135deg, rgba(74, 28, 46, 0.9) 0%, rgba(45, 19, 32, 0.85) 100%) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(249, 115, 22, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.15), inset 0 1px 0 rgba(251, 191, 36, 0.1);
+}
+
+.theme-sunset .bg-gray-700 {
+  background: linear-gradient(135deg, rgba(92, 38, 54, 0.7) 0%, rgba(74, 28, 46, 0.8) 100%) !important;
+}
+
+.theme-sunset .border-gray-700,
+.theme-sunset .border-gray-100 {
+  border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+.theme-sunset .text-purple-400,
+.theme-sunset .text-purple-600 {
+  color: #fb923c !important;
+  text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+}
+
+.theme-sunset .bg-purple-50,
+.theme-sunset .dark\:bg-purple-900\/20 {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(236, 72, 153, 0.15) 100%) !important;
+}
+
+.theme-sunset .text-green-500 {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.theme-sunset .bg-green-100,
+.theme-sunset .bg-green-900 {
+  background: rgba(251, 191, 36, 0.15) !important;
+}
+
+.theme-sunset .text-green-700,
+.theme-sunset .text-green-300 {
+  color: #fcd34d !important;
+}
+
+.theme-sunset .text-gray-400 {
+  color: #fdba74 !important;
+}
+
+.theme-sunset .text-gray-300 {
+  color: #fed7aa !important;
+}
+
+.theme-sunset .text-white {
+  color: #fff7ed !important;
+}
+
+.theme-sunset .text-red-500 {
+  color: #f87171 !important;
+  text-shadow: 0 0 10px rgba(248, 113, 113, 0.4);
+}
+
+.theme-sunset .bg-blue-100,
+.theme-sunset .bg-blue-900 {
+  background: rgba(249, 115, 22, 0.2) !important;
+}
+
+.theme-sunset .text-blue-800,
+.theme-sunset .text-blue-200 {
+  color: #fdba74 !important;
+}
+
+.theme-sunset .bg-red-100,
+.theme-sunset .bg-red-900 {
+  background: rgba(248, 113, 113, 0.2) !important;
+}
+
+.theme-sunset .text-red-800,
+.theme-sunset .text-red-200 {
+  color: #fca5a5 !important;
+}
+
+.theme-sunset .hover\:bg-gray-100:hover,
+.theme-sunset .dark\:hover\:bg-gray-700:hover {
+  background: rgba(249, 115, 22, 0.2) !important;
+}

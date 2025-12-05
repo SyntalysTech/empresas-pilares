@@ -30,8 +30,17 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  if (localStorage.getItem('darkMode') === 'true') {
-                    document.documentElement.classList.add('dark');
+                  var theme = localStorage.getItem('theme');
+                  if (theme) {
+                    if (theme === 'dark') {
+                      document.documentElement.classList.add('dark');
+                    } else if (theme === 'midnight') {
+                      document.documentElement.classList.add('dark', 'theme-midnight');
+                    } else if (theme === 'forest') {
+                      document.documentElement.classList.add('dark', 'theme-forest');
+                    } else if (theme === 'sunset') {
+                      document.documentElement.classList.add('dark', 'theme-sunset');
+                    }
                   }
                 } catch (e) {}
               })();
